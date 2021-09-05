@@ -1,0 +1,29 @@
+<app-search-banner
+  title="Buscar por capital"
+  nameInput="Capital"
+  placeholderInput="Ingresar el nombre de una capital"
+  (onEnter)="search($event)"
+></app-search-banner>
+
+<div *ngIf="!loadingData; else loading">
+  <div *ngIf="!isError; else error">
+    <div *ngIf="countries.length !== 0">
+      <app-display-table [countries]="countries"> </app-display-table>
+      <app-paginator
+        [totalCant]="totalCountries"
+        [cantPerPage]="cantPerPage"
+        (valuePerPage)="searchByPaginator($event)"
+      ></app-paginator>
+    </div>
+  </div>
+
+  <ng-template #error>
+    <app-error-message
+      errorText="No hay datos con el término ingresado"
+    ></app-error-message>
+  </ng-template>
+</div>
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>

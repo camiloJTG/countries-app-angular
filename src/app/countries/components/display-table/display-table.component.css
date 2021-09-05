@@ -1,0 +1,14 @@
+table {
+  width: 100%;
+}
+
+.displayTable {
+  max-width: 100%;
+  overflow: auto;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.tableHeader {
+  text-align: center;
+}
