@@ -19,4 +19,8 @@ export class CountriesService {
   getCountry(country: string): Observable<ICountrie[]> {
     return this.http.get<ICountrie[]>(`${this.baseUrl}/name/${country}`);
   }
+
+  getRegion(region: string): Observable<ICountrie[]> {
+    return this.http.get<ICountrie[]>(`${this.baseUrl}/region/${region}`);
+  }
 }
