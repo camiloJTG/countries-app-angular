@@ -15,4 +15,8 @@ export class CountriesService {
   getCapital(capital: string): Observable<ICountrie[]> {
     return this.http.get<ICountrie[]>(`${this.baseUrl}/capital/${capital}`);
   }
+
+  getCountry(country: string): Observable<ICountrie[]> {
+    return this.http.get<ICountrie[]>(`${this.baseUrl}/name/${country}`);
+  }
 }

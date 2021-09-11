@@ -5,8 +5,6 @@ import { CountriesRoutingModule } from './countries-routing.module';
 import { MaterialModule } from '../material/material.module';
 
 import { ByNameComponent } from './pages/by-name/by-name.component';
-import { ByCurrencyComponent } from './pages/by-currency/by-currency.component';
-import { ByLanguageComponent } from './pages/by-language/by-language.component';
 import { ByCapitalComponent } from './pages/by-capital/by-capital.component';
 import { ByRegionComponent } from './pages/by-region/by-region.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
@@ -20,8 +18,6 @@ import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [
     ByNameComponent,
-    ByCurrencyComponent,
-    ByLanguageComponent,
     ByCapitalComponent,
     ByRegionComponent,
     SidenavComponent,
