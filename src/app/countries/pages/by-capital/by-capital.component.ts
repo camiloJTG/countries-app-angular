@@ -11,7 +11,6 @@ import { CountriesService } from '../../services/countries.service';
 export class ByCapitalComponent implements OnInit {
   countries: ICountrie[] = [];
   isError: boolean = false;
-  loadingData: boolean = false;
   termSearch: string = '';
   totalCountries: number = 0;
   cantPerPage: number = environment.cantPerPage;
@@ -23,16 +22,13 @@ export class ByCapitalComponent implements OnInit {
   search(term: string) {
     this.termSearch = term;
     this.isError = false;
-    this.loadingData = true;
     this.countrieService.getCapital(term.trim()).subscribe(
       (resp) => {
         this.countries = resp.splice(0, this.cantPerPage);
         this.totalCountries = resp.length;
-        this.loadingData = false;
       },
       (err) => {
         this.isError = true;
-        this.loadingData = false;
         this.countries = [];
       }
     );
@@ -40,16 +36,13 @@ export class ByCapitalComponent implements OnInit {
 
   searchByPaginator(val1: number[]) {
     this.isError = false;
-    this.loadingData = true;
     this.countrieService.getCapital(this.termSearch.trim()).subscribe(
       (resp) => {
         this.countries = resp.splice(val1[0], val1[1]);
         this.totalCountries = resp.length;
-        this.loadingData = false;
       },
       (err) => {
         this.isError = true;
-        this.loadingData = false;
         this.countries = [];
       }
     );
