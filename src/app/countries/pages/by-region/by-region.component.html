@@ -1,1 +1,19 @@
-<p>by-region works!</p>
+<app-button-search-region
+  (ternSearch)="search($event)"
+></app-button-search-region>
+
+<div *ngIf="!isError; else error">
+  <div *ngIf="countries.length !== 0">
+    <app-display-table [countries]="countries"></app-display-table>
+    <app-paginator
+      [totalCant]="totalCountries"
+      [cantPerPage]="cantPerPage"
+      (valuePerPage)="searchByPaginator($event)"
+    ></app-paginator>
+  </div>
+</div>
+
+<ng-template #error>
+  <app-error-message errorText="No hay datos con el término ingresado">
+  </app-error-message>
+</ng-template>
