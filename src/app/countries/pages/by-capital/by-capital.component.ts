@@ -24,8 +24,8 @@ export class ByCapitalComponent implements OnInit {
     this.isError = false;
     this.countrieService.getCapital(term.trim()).subscribe(
       (resp) => {
-        this.countries = resp.splice(0, this.cantPerPage);
         this.totalCountries = resp.length;
+        this.countries = resp.splice(0, this.cantPerPage);
       },
       (err) => {
         this.isError = true;
@@ -38,8 +38,8 @@ export class ByCapitalComponent implements OnInit {
     this.isError = false;
     this.countrieService.getCapital(this.termSearch.trim()).subscribe(
       (resp) => {
-        this.countries = resp.splice(val1[0], val1[1]);
         this.totalCountries = resp.length;
+        this.countries = resp.splice(val1[0], val1[1]);
       },
       (err) => {
         this.isError = true;

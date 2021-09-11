@@ -24,8 +24,8 @@ export class ByNameComponent implements OnInit {
     this.isError = false;
     this.countrieService.getCountry(term.trim()).subscribe(
       (resp) => {
-        this.countries = resp.splice(0, this.cantPerPage);
         this.totalCountries = resp.length;
+        this.countries = resp.splice(0, this.cantPerPage);
       },
       (err) => {
         this.isError = true;
@@ -38,8 +38,8 @@ export class ByNameComponent implements OnInit {
     this.isError = false;
     this.countrieService.getCountry(this.termSearch.trim()).subscribe(
       (resp) => {
-        this.countries = resp.splice(pagination[0], pagination[1]);
         this.totalCountries = resp.length;
+        this.countries = resp.splice(pagination[0], pagination[1]);
       },
       (err) => {
         this.isError = true;
