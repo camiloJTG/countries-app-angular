@@ -14,6 +14,7 @@ import { SearchBannerComponent } from './components/search-banner/search-banner.
 import { DisplayTableComponent } from './components/display-table/display-table.component';
 import { PaginatorComponent } from './components/paginator/paginator.component';
 import { SharedModule } from '../shared/shared.module';
+import { ButtonSearchRegionComponent } from './components/button-search-region/button-search-region.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { SharedModule } from '../shared/shared.module';
     SearchBannerComponent,
     DisplayTableComponent,
     PaginatorComponent,
+    ButtonSearchRegionComponent,
   ],
   imports: [
     CommonModule,
