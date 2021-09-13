@@ -1,0 +1,82 @@
+<mat-card class="cardContent">
+  <mat-card-header>
+    <mat-card-title> {{ data.name }}, {{ data.capital }} </mat-card-title>
+    <mat-card-subtitle>
+      {{ data.region }}, {{ data.subregion }}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="data.flag" alt="pais" />
+  <mat-card-content>
+    <mat-list>
+      <div mat-subheader>Datos Generales</div>
+      <div
+        fxLayout="row wrap"
+        fxLayout.xs="column"
+        fxLayout.sm="row"
+        fxLayoutAlign="center"
+        fxLayoutGap="10px"
+      >
+        <button
+          mat-raised-button
+          [matTooltip]="data.population.toString()"
+          aria-label="Button that displays a tooltip when focused or hovered over"
+        >
+          Población
+        </button>
+        <button
+          mat-raised-button
+          [matTooltip]="data.currencies[0].name"
+          aria-label="Button that displays a tooltip when focused or hovered over"
+        >
+          Moneda
+        </button>
+        <button
+          mat-raised-button
+          [matTooltip]="data.demonym"
+          aria-label="Button that displays a tooltip when focused or hovered over"
+        >
+          Denominación
+        </button>
+      </div>
+      <br />
+      <mat-divider></mat-divider>
+      <div mat-subheader>Idiomas</div>
+      <div
+        fxLayout="row wrap"
+        fxLayout.xs="column"
+        fxLayout.sm="row"
+        fxLayoutAlign="center"
+        fxLayoutGap="10px"
+      >
+        <mat-chip-list cdkDropListOrientation="horizontal">
+          <mat-chip *ngFor="let language of data.languages">
+            {{ language.name }}
+          </mat-chip>
+        </mat-chip-list>
+      </div>
+      <br />
+      <mat-divider></mat-divider>
+      <div mat-subheader>Otras traducciones</div>
+      <div
+        fxLayout="row wrap"
+        fxLayout.xs="column"
+        fxLayout.sm="row"
+        fxLayoutAlign="center"
+        fxLayoutGap="10px"
+      >
+        <mat-chip-list cdkDropListOrientation="horizontal">
+          <mat-chip> {{ data.translations.br }} </mat-chip>
+          <mat-chip> {{ data.translations.de }} </mat-chip>
+          <mat-chip> {{ data.translations.es }} </mat-chip>
+          <mat-chip> {{ data.translations.fa }} </mat-chip>
+          <mat-chip> {{ data.translations.fr }} </mat-chip>
+          <mat-chip> {{ data.translations.hr }} </mat-chip>
+          <mat-chip> {{ data.translations.it }} </mat-chip>
+          <mat-chip> {{ data.translations.ja }} </mat-chip>
+          <mat-chip> {{ data.translations.nl }} </mat-chip>
+          <mat-chip> {{ data.translations.pt }} </mat-chip>
+        </mat-chip-list>
+      </div>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
