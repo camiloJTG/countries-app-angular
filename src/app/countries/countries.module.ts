@@ -15,7 +15,7 @@ import { DisplayTableComponent } from './components/display-table/display-table.
 import { PaginatorComponent } from './components/paginator/paginator.component';
 import { SharedModule } from '../shared/shared.module';
 import { ButtonSearchRegionComponent } from './components/button-search-region/button-search-region.component';
-import { DetailCountryComponent } from './pages/detail-country/detail-country.component';
+import { DisplayCardComponent } from './components/display-card/display-card.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { DetailCountryComponent } from './pages/detail-country/detail-country.co
     DisplayTableComponent,
     PaginatorComponent,
     ButtonSearchRegionComponent,
-    DetailCountryComponent,
+    DisplayCardComponent,
   ],
   imports: [
     CommonModule,

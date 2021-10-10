@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { PageEvent } from '@angular/material/paginator';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ICountrie } from '../../interfaces/countries';
+import { DisplayCardComponent } from '../display-card/display-card.component';
 
 @Component({
   selector: 'app-display-table',
@@ -13,7 +14,15 @@ export class DisplayTableComponent implements OnInit {
 
   headers: string[] = ['Bandera', 'Nombre', 'Región', 'Capital', 'Detalle'];
 
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {}
+
+  openDetail(name: string) {
+    let countryFound: ICountrie | undefined = this.countries.find(
+      (country) => country.name === name
+    );
+
+    this.dialog.open(DisplayCardComponent, { data: countryFound });
+  }
 }
