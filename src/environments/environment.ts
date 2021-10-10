@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://restcountries/rest/v2',
+  baseUrl: 'https://restcountries.com/v2',
   cantPerPage: 20,
 };
 
